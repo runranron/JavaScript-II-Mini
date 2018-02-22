@@ -8,16 +8,25 @@ while (n <= 10) {
 }
 
 // write a recursive - function called countToTen that mimics the while loop above.
+let x = 1;
+const countToTen = function() {
+  if (x > 10) {
+    return null;
+  }
+  console.log('While loop', x);
+  return countToTen(x++);
+}
+
 
 // code here
 
 // when you code is ready, un-comment the next line and run the file
-// console.log(countToTen());
+console.log(countToTen());
 /* ================ Next Problem ================= */
 
 // Problem 2:
 
-const factorial = n => {
+const factorial = (n) => {
   let result = 1;
   for (let i = 2; i <= n; i++) {
     result *= i;
@@ -28,6 +37,14 @@ const factorial = n => {
 console.log(factorial(5));
 
 // write the above function in a recursive way.
+let result = 1;
+const recursiveFactorial = (n) => {
+  if (n <= 0) {
+    return result;
+  } 
+  result *= n;
+  return recursiveFactorial(n-1);
+}
 
 // when your code is ready, un-comment the next line and run the file
-// console.log(recursiveFactorial());
+console.log(recursiveFactorial(5));
